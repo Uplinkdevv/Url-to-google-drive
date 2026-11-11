@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Relay — Transfer workspace</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/app.js" type="module"></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <aside class="sidebar">
+      <a href="#overview" class="brand"
+        ><span class="brand-symbol">↗</span>relay<span class="brand-period">.</span></a
+      ><span class="workspace-label">PERSONAL WORKSPACE</span>
+      <nav aria-label="Main navigation">
+        <button class="nav-item active" data-view="overview"><span>◫</span> Overview</button
+        ><button class="nav-item" data-view="transfers">
+          <span>⇅</span> Transfers <b id="nav-count">0</b></button
+        ><button class="nav-item" data-view="templates"><span>▤</span> Templates</button
+        ><button class="nav-item" data-view="activity"><span>◷</span> Activity</button
+        ><button class="nav-item" data-view="settings"><span>⚙</span> Settings</button
+        ><button class="nav-item" data-view="help"><span>?</span> Help & setup</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="local-label"><i></i> Runs on your computer</div>
+        <p>Your files. Your Drive.<br />A little less in between.</p>
+        <span class="version">RELAY / 2.0 DEVELOPMENT</span>
+      </div>
+    </aside>
+    <main id="main">
+      <header class="topbar">
+        <div class="breadcrumb">
+          Workspace <span>/</span> <strong id="breadcrumb">Overview</strong>
+        </div>
+        <div class="topbar-actions">
+          <button id="theme-toggle" class="icon-button" aria-label="Switch color theme">◐</button
+          ><button id="connection-button" class="connection-pill">
+            <i id="connection-dot"></i><span id="connection-label">Connect Drive</span
+            ><span>↗</span>
+          </button>
+        </div>
+      </header>
+      <div id="notice" class="notice" role="status" hidden>
+        <span id="notice-text"></span
+        ><button id="dismiss-notice" aria-label="Dismiss notification">×</button>
+      </div>
+      <section id="view-overview" class="view">
+        <div class="page-title">
+          <div>
+            <div class="eyebrow">YOUR FILES, IN MOTION</div>
+            <h1>Good things arrive <em>here.</em></h1>
+            <p>One link or a whole collection. Give your files a new home.</p>
+          </div>
+          <button class="primary" id="new-transfer">New transfer <span>+</span></button>
+        </div>
+        <div class="stats">
+          <article>
+            <span>TRANSFERRED</span><strong id="stat-bytes">0 B</strong
+            ><small>Across your workspace</small>
+          </article>
+          <article>
+            <span>IN PROGRESS</span><strong id="stat-active">0</strong
+            ><small id="stat-speed">Ready when you are</small>
+          </article>
+          <article>
+            <span>COMPLETED</span><strong id="stat-completed">0</strong
+            ><small>Files delivered to Drive</small>
+          </article>
+          <article>
+            <span>IN QUEUE</span><strong id="stat-queued">0</strong
+            ><small id="queue-state">Waiting for a connection</small>
+          </article>
+        </div>
+        <div class="overview-grid">
+          <section class="card quick-card">
+            <div class="section-heading">
+              <div>
+                <h2>Drop a link. We’ll handle the rest.</h2>
+                <p>Public file URLs, directly to Google Drive.</p>
+              </div>
+              <span class="large-arrow">↗</span>
+            </div>
+            <form id="quick-form">
+              <label class="sr-only" for="quick-url">File URL</label>
+              <div class="quick-input">
+                <span>⌁</span
+                ><input
+                  type="url"
+                  id="quick-url"
+                  placeholder="Paste a direct download link…"
+                  required
+                /><button class="primary" type="submit">Add to queue ↗</button>
+              </div>
+            </form>
+            <div class="quick-footer">
+              <span>◎ No full local copies</span
+              ><button class="text-button" id="batch-open">Import multiple links →</button>
+            </div>
+          </section>
+          <section class="drive-card">
+            <span class="drive-glyph">△</span>
+            <div>
+              <h2>One connected home.</h2>
+              <p id="account-caption">Connect Google Drive to start transferring.</p>
+              <button class="text-button" id="account-connect">Set up Google Drive ↗</button>
+            </div>
+          </section>
+        </div>
+        <section class="card transfer-section">
+          <div class="section-heading">
+            <h2>Recent transfers <span class="muted" id="recent-count"></span></h2>
+            <button class="text-button" data-go="transfers">View all transfers →</button>
+          </div>
+          <div id="recent-jobs"></div>
+        </section>
+        <div class="bottom-note">
+          <span>✦ Built for the long haul</span>
+          <p>
+            Files move in small chunks. Keep this computer awake and Relay running while transfers
+            are active.
+          </p>
+        </div>
+      </section>
+      <section id="view-transfers" class="view" hidden>
+        <div class="page-title">
+          <div>
+            <div class="eyebrow">THE WHOLE JOURNEY</div>
+            <h1>Your transfers<span class="title-dot">.</span></h1>
+            <p>Organize, schedule, and keep every file moving.</p>
+          </div>
+          <button class="primary" id="transfer-add">New transfer +</button>
+        </div>
+        <div class="toolbar">
+          <label class="search"
+            ><span>⌕</span
+            ><input
+              id="search"
+              placeholder="Search files, tags, notes, or hosts…"
+              aria-label="Search transfers" /></label
+          ><select id="status-filter" aria-label="Filter status">
+            <option value="all">All statuses</option>
+            <option>Queued</option>
+            <option>Scheduled</option>
+            <option>Paused</option>
+            <option>Uploading</option>
+            <option>Complete</option>
+            <option>Failed</option>
+            <option>Cancelled</option>
+            <option>Interrupted</option></select
+          ><select id="sort" aria-label="Sort transfers">
+            <option value="newest">Newest first</option>
+            <option value="oldest">Oldest first</option>
+            <option value="name">Name A–Z</option>
+            <option value="size">Largest first</option>
+            <option value="priority">Priority</option>
+          </select>
+        </div>
+        <div class="sub-toolbar">
+          <label class="check"><input id="select-all" type="checkbox" /> Select visible</label
+          ><label class="check"><input id="show-archived" type="checkbox" /> Show archived</label
+          ><label class="check"><input id="pinned-only" type="checkbox" /> Pinned only</label
+          ><button id="queue-toggle" class="secondary">Pause queue</button>
+          <details class="export-menu">
+            <summary>Export ↓</summary>
+            <a href="/api/export?format=csv" download>CSV spreadsheet</a
+            ><a href="/api/export?format=json" download>JSON history</a>
+          </details>
+        </div>
+        <div id="bulk-bar" class="bulk-bar" hidden>
+          <strong id="selected-count"></strong><button data-bulk="pause">Pause</button
+          ><button data-bulk="resume">Resume</button><button data-bulk="retry">Retry</button
+          ><button data-bulk="cancel">Cancel</button><button data-bulk="archive">Archive</button
+          ><button data-bulk="remove">Remove history</button>
+        </div>
+        <section class="card transfer-section">
+          <div id="all-jobs"></div>
+          <div class="pagination">
+            <button id="prev-page" class="secondary">← Previous</button><span id="page-info"></span
+            ><button id="next-page" class="secondary">Next →</button>
+          </div>
+        </section>
+      </section>
+      <section id="view-templates" class="view" hidden>
+        <div class="page-title">
+          <div>
+            <div class="eyebrow">SET IT ONCE</div>
+            <h1>A familiar <em>routine.</em></h1>
+            <p>Save destinations, naming patterns, priorities, and tags for next time.</p>
+          </div>
+          <button id="template-add" class="primary">Create template +</button>
+        </div>
+        <div id="templates-grid" class="template-grid"></div>
+      </section>
+      <section id="view-activity" class="view" hidden>
+        <div class="page-title">
+          <div>
+            <div class="eyebrow">WORKSPACE JOURNAL</div>
+            <h1>Every step, <em>recorded.</em></h1>
+            <p>Your latest 500 queue and connection events.</p>
+          </div>
+          <a class="secondary" href="/api/backup" download>Export workspace ↓</a>
+        </div>
+        <section id="activity-list" class="card"></section>
+      </section>
+      <section id="view-settings" class="view" hidden>
+        <div class="page-title">
+          <div>
+            <div class="eyebrow">MAKE YOURSELF AT HOME</div>
+            <h1>On your <em>terms.</em></h1>
+            <p>Fine-tune transfers, privacy, and your workspace.</p>
+          </div>
+        </div>
+        <form id="settings-form" class="settings-grid">
+          <section class="card">
+            <h2>Transfer engine</h2>
+            <div class="field-row">
+              <label
+                >Concurrent transfers<input
+                  name="concurrency"
+                  type="number"
+                  min="1"
+                  max="8" /></label
+              ><label>Chunk size (MB)<input name="chunkMB" type="number" min="1" max="32" /></label>
+            </div>
+            <div class="field-row">
+              <label
+                >Chunk retry attempts<input name="retries" type="number" min="0" max="8" /></label
+              ><label
+                >Max file size (MB)<input
+                  name="maxFileMB"
+                  type="number"
+                  min="0"
+                  max="10000000"
+                /><small>0 means no app limit.</small></label
+              >
+            </div>
+            <label
+              >Per-transfer speed limit (KB/s)<input
+                name="speedLimitKB"
+                type="number"
+                min="0"
+                max="1000000"
+              /><small>0 means unlimited. Throttling applies between chunks.</small></label
+            ><label
+              >Duplicate URL policy<select name="duplicatePolicy">
+                <option value="skip">Skip duplicates in the same destination</option>
+                <option value="allow">Allow duplicates</option>
+              </select></label
+            >
+          </section>
+          <section class="card">
+            <h2>Appearance & behavior</h2>
+            <div class="field-row">
+              <label
+                >Theme<select name="theme">
+                  <option value="system">Follow system</option>
+                  <option value="light">Light</option>
+                  <option value="dark">Dark</option>
+                </select></label
+              ><label
+                >Density<select name="density">
+                  <option value="comfortable">Comfortable</option>
+                  <option value="compact">Compact</option>
+                </select></label
+              >
+            </div>
+            <div class="field-row">
+              <label
+                >Refresh interval (seconds)<input
+                  name="refreshSeconds"
+                  type="number"
+                  min="1"
+                  max="30" /></label
+              ><label
+                >History limit<input name="historyLimit" type="number" min="100" max="10000"
+              /></label>
+            </div>
+            <label class="check"
+              ><input name="confirmCancel" type="checkbox" /> Confirm before cancelling
+              transfers</label
+            ><label class="check"
+              ><input name="notifyComplete" type="checkbox" /> Show completion notifications in
+              Relay</label
+            ><label class="check"
+              ><input name="notifyFailure" type="checkbox" /> Show failure notifications in
+              Relay</label
+            >
+          </section>
+          <section class="card">
+            <h2>Transfer defaults</h2>
+            <label
+              >Default priority<select name="defaultPriority">
+                <option value="-1">Low</option>
+                <option value="0">Normal</option>
+                <option value="1">High</option>
+              </select></label
+            ><label>Default tags<input name="defaultTags" placeholder="work, research" /></label
+            ><label
+              >File naming pattern<input name="nameTemplate" placeholder="{date}_{name}" /><small
+                >Tokens: {name}, {base}, {ext}, {host}, {date}, {time}</small
+              ></label
+            ><label class="check"
+              ><input name="allowHtml" type="checkbox" /> Allow HTML files by default</label
+            >
+          </section>
+          <section class="card">
+            <h2>Privacy & local storage</h2>
+            <p class="muted">
+              Google credentials stay in memory. History is saved locally in this project’s .relay
+              folder.
+            </p>
+            <label class="check"
+              ><input name="rememberSources" type="checkbox" /> Save source URLs for retry after
+              restart</label
+            ><small
+              >URLs may contain private download tokens. Enable only if you want these links stored
+              on this computer. Disabling removes saved URLs on the next save.</small
+            >
+            <div class="settings-actions">
+              <a class="secondary" href="/api/backup" download>Export workspace</a
+              ><button type="button" id="clear-history" class="text-button danger">
+                Clear unpinned finished history
+              </button>
+            </div>
+          </section>
+          <div class="settings-submit">
+            <button class="secondary" type="button" id="reset-settings">Reset defaults</button
+            ><button class="primary" type="submit">Save settings ✓</button>
+          </div>
+        </form>
+      </section>
+      <section id="view-help" class="view" hidden>
+        <div class="page-title">
+          <div>
+            <div class="eyebrow">LET’S GET CONNECTED</div>
+            <h1>A little setup.<br /><em>A lot less friction.</em></h1>
+            <p>Bring your own Google client. Keep control of your files.</p>
+          </div>
+        </div>
+        <div class="help-grid">
+          <section class="card">
+            <h2>Connect Google Drive</h2>
+            <ol class="setup-steps">
+              <li>
+                <strong>Create a Google Cloud project</strong>
+                <p>
+                  Open
+                  <a href="https://console.cloud.google.com/" target="_blank" rel="noreferrer"
+                    >Google Cloud Console ↗</a
+                  >. Create or select a project.
+                </p>
+              </li>
+              <li>
+                <strong>Enable the Google Drive API</strong>
+                <p>Find Google Drive API in the API Library and enable it.</p>
+              </li>
+              <li>
+                <strong>Configure Google Auth Platform</strong>
+                <p>
+                  Set Branding and Audience. Add your email as a test user if your app is in
+                  testing.
+                </p>
+              </li>
+              <li>
+                <strong>Create a Desktop app client</strong>
+                <p>In Clients, choose OAuth client → Desktop app, then download its JSON.</p>
+              </li>
+              <li>
+                <strong>Load the JSON and connect</strong
+                ><label class="file-input"
+                  >Choose client JSON<input
+                    id="credentials"
+                    type="file"
+                    accept=".json,application/json"
+                /></label>
+                <p id="config-status">No client loaded.</p>
+                <button id="connect" class="primary">Connect Google Drive ↗</button
+                ><button id="disconnect" class="secondary" hidden>Disconnect</button>
+              </li>
+            </ol>
+          </section>
+          <div>
+            <section class="card">
+              <h2>Good to know</h2>
+              <details open>
+                <summary>What links work?</summary>
+                <p>
+                  Public HTTP or HTTPS direct file URLs. Pages requiring cookies, sign-in, or
+                  interactive download buttons are not supported.
+                </p>
+              </details>
+              <details>
+                <summary>Where does the file travel?</summary>
+                <p>
+                  Through this computer in small chunks, into Google Drive. Keep Relay running and
+                  the computer online.
+                </p>
+              </details>
+              <details>
+                <summary>Can I use existing folders?</summary>
+                <p>
+                  Relay only accesses files and folders it creates. Choose My Drive or create a
+                  folder here.
+                </p>
+              </details>
+              <details>
+                <summary>What happens after a restart?</summary>
+                <p>
+                  History and settings remain. Load your client JSON and connect again. Incomplete
+                  transfers restart from the beginning; source links are available only if you
+                  enabled saving them.
+                </p>
+              </details>
+              <details>
+                <summary>When do scheduled jobs run?</summary>
+                <p>
+                  When their time arrives and Relay is running, signed in, and the queue is not
+                  paused. Overdue jobs wait until those conditions are met.
+                </p>
+              </details>
+              <details>
+                <summary>Keyboard shortcuts</summary>
+                <p>
+                  N — new transfer<br />/ — search transfers<br />Escape — close dialogs<br />Shortcuts
+                  are disabled while typing.
+                </p>
+              </details>
+            </section>
+            <section class="card feature-progress">
+              <h2>Development roadmap</h2>
+              <p id="feature-summary">Loading feature inventory…</p>
+              <p class="muted">
+                The 300+ feature expansion is in development. Planned items are not advertised as
+                working features.
+              </p>
+              <a
+                href="https://github.com/Uplinkdevv/Url-to-google-drive"
+                target="_blank"
+                rel="noreferrer"
+                >View project on GitHub ↗</a
+              >
+            </section>
+          </div>
+        </div>
+      </section>
+      <footer>
+        <span>RELAY BY UPLINKDEV</span
+        ><span>From anywhere on the web. To your corner of the cloud.</span>
+      </footer>
+    </main>
+    <dialog id="transfer-dialog" class="wide-dialog">
+      <form id="transfer-form">
+        <div class="dialog-heading">
+          <div>
+            <span class="eyebrow">SEND SOMETHING GOOD</span>
+            <h2>New transfer</h2>
+          </div>
+          <button type="button" class="close-dialog" aria-label="Close dialog">×</button>
+        </div>
+        <div class="tabs">
+          <button type="button" id="single-tab" class="active">Single URL</button
+          ><button type="button" id="batch-tab">Batch import</button>
+        </div>
+        <div id="single-fields">
+          <label for="url"
+            >File URL<input id="url" type="url" placeholder="https://example.com/file.zip" /></label
+          ><label for="filename"
+            >File name <span>optional</span
+            ><input id="filename" maxlength="240" placeholder="Use original name"
+          /></label>
+        </div>
+        <div id="batch-fields" hidden>
+          <label
+            >Links to import<textarea
+              id="batch-text"
+              rows="6"
+              placeholder="One URL per line, or paste CSV / JSON"
+            ></textarea>
+          </label>
+          <div class="field-row">
+            <label
+              >Format<select id="batch-format">
+                <option value="text">Plain text — one URL per line</option>
+                <option value="csv">CSV with a url header</option>
+                <option value="json">JSON array</option>
+              </select></label
+            ><label
+              >Import file<input id="batch-file" type="file" accept=".txt,.csv,.json"
+            /></label>
+          </div>
+          <small
+            >Up to 500 links. CSV fields: url, name, folder, priority, tags (semicolon-separated),
+            notes, scheduledAt.</small
+          >
+        </div>
+        <div class="field-row">
+          <label
+            >Destination<select id="folder">
+              <option value="root">My Drive</option>
+            </select></label
+          ><label
+            >Priority<select id="priority">
+              <option value="0">Normal</option>
+              <option value="1">High</option>
+              <option value="-1">Low</option>
+            </select></label
+          >
+        </div>
+        <div class="inline-actions">
+          <button id="new-folder" class="text-button" type="button">+ New folder</button
+          ><button id="refresh-folders" class="text-button" type="button">Refresh folders</button
+          ><select id="apply-template" aria-label="Apply template">
+            <option value="">Apply template…</option>
+          </select>
+        </div>
+        <details class="advanced">
+          <summary>Schedule & advanced options</summary>
+          <label
+            >Start after<input id="schedule" type="datetime-local" /><small
+              >Uses your computer’s local time. App must be running.</small
+            ></label
+          ><label>Tags<input id="tags" placeholder="work, reference" /></label
+          ><label>Notes<textarea id="notes" rows="2" maxlength="2000"></textarea></label
+          ><label>File naming pattern<input id="name-template" placeholder="{date}_{name}" /></label
+          ><label
+            >Expected SHA-256 <span>single URL only</span
+            ><input
+              id="expected-hash"
+              maxlength="64"
+              placeholder="Optional integrity check" /></label
+          ><label class="check"><input id="allow-html" type="checkbox" /> Allow HTML files</label>
+        </details>
+        <div id="dialog-error" role="alert" class="inline-error" hidden></div>
+        <div class="dialog-footer">
+          <button type="button" class="secondary close-dialog">Cancel</button
+          ><button type="submit" class="primary">Add to queue ↗</button>
+        </div>
+      </form>
+    </dialog>
+    <dialog id="folder-dialog">
+      <form id="folder-form">
+        <div class="dialog-heading">
+          <h2>Create a folder</h2>
+          <button class="close-dialog" type="button" aria-label="Close dialog">×</button>
+        </div>
+        <label>Folder name<input id="folder-name" required maxlength="240" /></label>
+        <p class="muted">Created inside the currently selected destination.</p>
+        <div class="dialog-footer">
+          <button class="primary" type="submit">Create folder +</button>
+        </div>
+      </form>
+    </dialog>
+    <dialog id="detail-dialog" class="wide-dialog">
+      <div class="dialog-heading">
+        <h2>Transfer details</h2>
+        <button class="close-dialog" aria-label="Close dialog">×</button>
+      </div>
+      <div id="detail-content"></div>
+    </dialog>
+    <dialog id="template-dialog">
+      <form id="template-form">
+        <div class="dialog-heading">
+          <h2>Save a template</h2>
+          <button class="close-dialog" type="button" aria-label="Close dialog">×</button>
+        </div>
+        <label>Template name<input id="template-name" required maxlength="80" /></label
+        ><label>Naming pattern<input id="template-pattern" placeholder="{date}_{name}" /></label
+        ><label>Tags<input id="template-tags" placeholder="research, weekly" /></label
+        ><label
+          >Priority<select id="template-priority">
+            <option value="0">Normal</option>
+            <option value="1">High</option>
+            <option value="-1">Low</option>
+          </select></label
+        >
+        <p class="muted">
+          Uses My Drive as destination. Advanced templates can be saved from transfer details in a
+          future update.
+        </p>
+        <div class="dialog-footer">
+          <button class="primary" type="submit">Save template</button>
+        </div>
+      </form>
+    </dialog>
+  </body>
+</html>

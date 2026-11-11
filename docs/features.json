@@ -1,0 +1,3370 @@
+{
+  "version": 1,
+  "target": "300+ working, verified related features",
+  "note": "Implementation status is source-backed, not a completion claim. Live Google checks and individual acceptance checks remain required.",
+  "features": [
+    {
+      "id": "F001",
+      "category": "Import and intake",
+      "name": "Single direct URL intake",
+      "status": "implemented",
+      "evidence": [
+        "core/export.mjs",
+        "public/app.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F002",
+      "category": "Import and intake",
+      "name": "Multiline URL batch intake",
+      "status": "implemented",
+      "evidence": [
+        "core/export.mjs",
+        "public/app.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F003",
+      "category": "Import and intake",
+      "name": "Plain-text file import",
+      "status": "implemented",
+      "evidence": [
+        "core/export.mjs",
+        "public/app.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F004",
+      "category": "Import and intake",
+      "name": "CSV transfer import",
+      "status": "implemented",
+      "evidence": [
+        "core/export.mjs",
+        "public/app.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F005",
+      "category": "Import and intake",
+      "name": "JSON transfer import",
+      "status": "implemented",
+      "evidence": [
+        "core/export.mjs",
+        "public/app.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F006",
+      "category": "Import and intake",
+      "name": "Batch-wide destination defaults",
+      "status": "implemented",
+      "evidence": [
+        "core/export.mjs",
+        "public/app.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F007",
+      "category": "Import and intake",
+      "name": "Batch-wide priority defaults",
+      "status": "implemented",
+      "evidence": [
+        "core/export.mjs",
+        "public/app.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F008",
+      "category": "Import and intake",
+      "name": "Batch-wide tag defaults",
+      "status": "implemented",
+      "evidence": [
+        "core/export.mjs",
+        "public/app.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F009",
+      "category": "Import and intake",
+      "name": "Comment lines in text imports",
+      "status": "implemented",
+      "evidence": [
+        "core/export.mjs",
+        "public/app.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F010",
+      "category": "Import and intake",
+      "name": "Duplicate URL detection",
+      "status": "implemented",
+      "evidence": [
+        "core/export.mjs",
+        "public/app.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F011",
+      "category": "Import and intake",
+      "name": "Import error row numbers",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F012",
+      "category": "Import and intake",
+      "name": "Import preview before enqueue",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F013",
+      "category": "Import and intake",
+      "name": "Drag-and-drop import files",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F014",
+      "category": "Import and intake",
+      "name": "Clipboard URL extraction",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F015",
+      "category": "Import and intake",
+      "name": "HTML bookmark import",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F016",
+      "category": "Import and intake",
+      "name": "Markdown link import",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F017",
+      "category": "Queue management",
+      "name": "Persistent transfer queue",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F018",
+      "category": "Queue management",
+      "name": "Configurable concurrent transfers",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F019",
+      "category": "Queue management",
+      "name": "High-priority job ordering",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F020",
+      "category": "Queue management",
+      "name": "Pause waiting job",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F021",
+      "category": "Queue management",
+      "name": "Resume waiting job",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F022",
+      "category": "Queue management",
+      "name": "Pause queue dispatch",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F023",
+      "category": "Queue management",
+      "name": "Resume queue dispatch",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F024",
+      "category": "Queue management",
+      "name": "Cancel active transfer",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F025",
+      "category": "Queue management",
+      "name": "Cancel waiting transfer",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F026",
+      "category": "Queue management",
+      "name": "Retry failed transfer",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F027",
+      "category": "Queue management",
+      "name": "Retry cancelled transfer",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F028",
+      "category": "Queue management",
+      "name": "Retry interrupted transfer with new URL",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F029",
+      "category": "Queue management",
+      "name": "Bulk queue actions",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F030",
+      "category": "Queue management",
+      "name": "Atomic batch validation",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F031",
+      "category": "Queue management",
+      "name": "Queue capacity limit",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F032",
+      "category": "Queue management",
+      "name": "Move job to front",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F033",
+      "category": "Scheduling",
+      "name": "One-time scheduled start",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "public/app.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F034",
+      "category": "Scheduling",
+      "name": "Local-time schedule input",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "public/app.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F035",
+      "category": "Scheduling",
+      "name": "Overdue job dispatch after reconnect",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "public/app.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F036",
+      "category": "Scheduling",
+      "name": "Scheduled jobs respect queue pause",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "public/app.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F037",
+      "category": "Scheduling",
+      "name": "Scheduled job timestamp display",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "public/app.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F038",
+      "category": "Scheduling",
+      "name": "Edit scheduled time",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F039",
+      "category": "Scheduling",
+      "name": "Clear scheduled time",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F040",
+      "category": "Scheduling",
+      "name": "Daily recurring transfer",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F041",
+      "category": "Scheduling",
+      "name": "Weekly recurring transfer",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F042",
+      "category": "Scheduling",
+      "name": "Monthly recurring transfer",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F043",
+      "category": "Scheduling",
+      "name": "Weekday-only recurrence",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F044",
+      "category": "Scheduling",
+      "name": "Recurring schedule end date",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F045",
+      "category": "Scheduling",
+      "name": "Skip next scheduled occurrence",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F046",
+      "category": "Scheduling",
+      "name": "Schedule timezone selection",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F047",
+      "category": "Scheduling",
+      "name": "Schedule calendar view",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F048",
+      "category": "Scheduling",
+      "name": "Quiet-hours scheduling",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F049",
+      "category": "Names and metadata",
+      "name": "Custom upload file name",
+      "status": "implemented",
+      "evidence": [
+        "core/transfer.mjs",
+        "lib.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F050",
+      "category": "Names and metadata",
+      "name": "Source Content-Disposition file name",
+      "status": "implemented",
+      "evidence": [
+        "core/transfer.mjs",
+        "lib.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F051",
+      "category": "Names and metadata",
+      "name": "UTF-8 source file names",
+      "status": "implemented",
+      "evidence": [
+        "core/transfer.mjs",
+        "lib.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F052",
+      "category": "Names and metadata",
+      "name": "Rename waiting transfer",
+      "status": "implemented",
+      "evidence": [
+        "core/transfer.mjs",
+        "lib.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F053",
+      "category": "Names and metadata",
+      "name": "Date token in file names",
+      "status": "implemented",
+      "evidence": [
+        "core/transfer.mjs",
+        "lib.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F054",
+      "category": "Names and metadata",
+      "name": "Time token in file names",
+      "status": "implemented",
+      "evidence": [
+        "core/transfer.mjs",
+        "lib.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F055",
+      "category": "Names and metadata",
+      "name": "Source host token in file names",
+      "status": "implemented",
+      "evidence": [
+        "core/transfer.mjs",
+        "lib.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F056",
+      "category": "Names and metadata",
+      "name": "Original name token in file names",
+      "status": "implemented",
+      "evidence": [
+        "core/transfer.mjs",
+        "lib.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F057",
+      "category": "Names and metadata",
+      "name": "Base name token in file names",
+      "status": "implemented",
+      "evidence": [
+        "core/transfer.mjs",
+        "lib.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F058",
+      "category": "Names and metadata",
+      "name": "Extension token in file names",
+      "status": "implemented",
+      "evidence": [
+        "core/transfer.mjs",
+        "lib.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F059",
+      "category": "Names and metadata",
+      "name": "Path separator sanitization",
+      "status": "implemented",
+      "evidence": [
+        "core/transfer.mjs",
+        "lib.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F060",
+      "category": "Names and metadata",
+      "name": "Transfer notes",
+      "status": "implemented",
+      "evidence": [
+        "core/transfer.mjs",
+        "lib.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F061",
+      "category": "Names and metadata",
+      "name": "Drive description from notes",
+      "status": "implemented",
+      "evidence": [
+        "core/transfer.mjs",
+        "lib.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F062",
+      "category": "Names and metadata",
+      "name": "Sequential file numbering",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F063",
+      "category": "Names and metadata",
+      "name": "Name search-and-replace",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F064",
+      "category": "Names and metadata",
+      "name": "Case conversion rules",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F065",
+      "category": "Drive destinations",
+      "name": "Upload to My Drive",
+      "status": "implemented",
+      "evidence": [
+        "server.mjs",
+        "public/app.js"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F066",
+      "category": "Drive destinations",
+      "name": "List app-created folders",
+      "status": "implemented",
+      "evidence": [
+        "server.mjs",
+        "public/app.js"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F067",
+      "category": "Drive destinations",
+      "name": "Create destination folder",
+      "status": "implemented",
+      "evidence": [
+        "server.mjs",
+        "public/app.js"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F068",
+      "category": "Drive destinations",
+      "name": "Create nested destination folder",
+      "status": "implemented",
+      "evidence": [
+        "server.mjs",
+        "public/app.js"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F069",
+      "category": "Drive destinations",
+      "name": "Select upload destination",
+      "status": "implemented",
+      "evidence": [
+        "server.mjs",
+        "public/app.js"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F070",
+      "category": "Drive destinations",
+      "name": "Refresh destination folders",
+      "status": "implemented",
+      "evidence": [
+        "server.mjs",
+        "public/app.js"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F071",
+      "category": "Drive destinations",
+      "name": "Folder name search",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F072",
+      "category": "Drive destinations",
+      "name": "Favorite destination folders",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F073",
+      "category": "Drive destinations",
+      "name": "Recent destination folders",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F074",
+      "category": "Drive destinations",
+      "name": "Folder breadcrumbs",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F075",
+      "category": "Drive destinations",
+      "name": "Rename app-created folder",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F076",
+      "category": "Drive destinations",
+      "name": "Star app-created folder",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F077",
+      "category": "Drive destinations",
+      "name": "Open destination in Drive",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F078",
+      "category": "Drive destinations",
+      "name": "Create folder path automatically",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F079",
+      "category": "Drive destinations",
+      "name": "Destination storage quota check",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F080",
+      "category": "Drive destinations",
+      "name": "Shared-drive destination support",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F081",
+      "category": "Google connection",
+      "name": "Desktop OAuth client JSON loading",
+      "status": "implemented",
+      "evidence": [
+        "server.mjs",
+        "test/app.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F082",
+      "category": "Google connection",
+      "name": "Google browser authorization",
+      "status": "implemented",
+      "evidence": [
+        "server.mjs",
+        "test/app.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F083",
+      "category": "Google connection",
+      "name": "PKCE authorization protection",
+      "status": "implemented",
+      "evidence": [
+        "server.mjs",
+        "test/app.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F084",
+      "category": "Google connection",
+      "name": "OAuth callback state verification",
+      "status": "implemented",
+      "evidence": [
+        "server.mjs",
+        "test/app.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F085",
+      "category": "Google connection",
+      "name": "Authorization expiry validation",
+      "status": "implemented",
+      "evidence": [
+        "server.mjs",
+        "test/app.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F086",
+      "category": "Google connection",
+      "name": "Limited drive.file access scope",
+      "status": "implemented",
+      "evidence": [
+        "server.mjs",
+        "test/app.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F087",
+      "category": "Google connection",
+      "name": "Automatic access-token refresh",
+      "status": "implemented",
+      "evidence": [
+        "server.mjs",
+        "test/app.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F088",
+      "category": "Google connection",
+      "name": "Concurrent token refresh deduplication",
+      "status": "implemented",
+      "evidence": [
+        "server.mjs",
+        "test/app.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F089",
+      "category": "Google connection",
+      "name": "Local Google disconnect",
+      "status": "implemented",
+      "evidence": [
+        "server.mjs",
+        "test/app.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F090",
+      "category": "Google connection",
+      "name": "Credential-free queue preparation",
+      "status": "implemented",
+      "evidence": [
+        "server.mjs",
+        "test/app.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F091",
+      "category": "Google connection",
+      "name": "Connection status indicator",
+      "status": "implemented",
+      "evidence": [
+        "server.mjs",
+        "test/app.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F092",
+      "category": "Google connection",
+      "name": "Guided Google client setup",
+      "status": "implemented",
+      "evidence": [
+        "server.mjs",
+        "test/app.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F093",
+      "category": "Google connection",
+      "name": "Account identity display",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F094",
+      "category": "Google connection",
+      "name": "Drive storage quota display",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F095",
+      "category": "Google connection",
+      "name": "Google grant revocation",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F096",
+      "category": "Google connection",
+      "name": "Multiple Google accounts",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F097",
+      "category": "Transfer engine",
+      "name": "Stream without complete disk copy",
+      "status": "implemented",
+      "evidence": [
+        "core/transfer.mjs",
+        "lib.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F098",
+      "category": "Transfer engine",
+      "name": "Configurable upload chunk size",
+      "status": "implemented",
+      "evidence": [
+        "core/transfer.mjs",
+        "lib.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F099",
+      "category": "Transfer engine",
+      "name": "Google resumable upload sessions",
+      "status": "implemented",
+      "evidence": [
+        "core/transfer.mjs",
+        "lib.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F100",
+      "category": "Transfer engine",
+      "name": "Chunk retry with backoff",
+      "status": "implemented",
+      "evidence": [
+        "core/transfer.mjs",
+        "lib.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F101",
+      "category": "Transfer engine",
+      "name": "Server acknowledgement recovery probe",
+      "status": "implemented",
+      "evidence": [
+        "core/transfer.mjs",
+        "lib.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F102",
+      "category": "Transfer engine",
+      "name": "Upload progress display",
+      "status": "implemented",
+      "evidence": [
+        "core/transfer.mjs",
+        "lib.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F103",
+      "category": "Transfer engine",
+      "name": "Transfer speed display",
+      "status": "implemented",
+      "evidence": [
+        "core/transfer.mjs",
+        "lib.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F104",
+      "category": "Transfer engine",
+      "name": "Remaining-time estimate",
+      "status": "implemented",
+      "evidence": [
+        "core/transfer.mjs",
+        "lib.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F105",
+      "category": "Transfer engine",
+      "name": "Per-transfer bandwidth limit",
+      "status": "implemented",
+      "evidence": [
+        "core/transfer.mjs",
+        "lib.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F106",
+      "category": "Transfer engine",
+      "name": "Maximum file-size limit",
+      "status": "implemented",
+      "evidence": [
+        "core/transfer.mjs",
+        "lib.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F107",
+      "category": "Transfer engine",
+      "name": "HTTP redirect handling",
+      "status": "implemented",
+      "evidence": [
+        "core/transfer.mjs",
+        "lib.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F108",
+      "category": "Transfer engine",
+      "name": "Unknown source-length streaming",
+      "status": "implemented",
+      "evidence": [
+        "core/transfer.mjs",
+        "lib.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F109",
+      "category": "Transfer engine",
+      "name": "Empty file uploads",
+      "status": "implemented",
+      "evidence": [
+        "core/transfer.mjs",
+        "lib.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F110",
+      "category": "Transfer engine",
+      "name": "Automatic MIME detection",
+      "status": "implemented",
+      "evidence": [
+        "core/transfer.mjs",
+        "lib.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F111",
+      "category": "Transfer engine",
+      "name": "Source inactivity timeout",
+      "status": "implemented",
+      "evidence": [
+        "core/transfer.mjs",
+        "lib.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F112",
+      "category": "Transfer engine",
+      "name": "Google request timeout",
+      "status": "implemented",
+      "evidence": [
+        "core/transfer.mjs",
+        "lib.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F113",
+      "category": "Integrity and recovery",
+      "name": "SHA-256 calculation",
+      "status": "implemented",
+      "evidence": [
+        "core/transfer.mjs",
+        "core/queue.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F114",
+      "category": "Integrity and recovery",
+      "name": "Expected SHA-256 validation",
+      "status": "implemented",
+      "evidence": [
+        "core/transfer.mjs",
+        "core/queue.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F115",
+      "category": "Integrity and recovery",
+      "name": "MD5 calculation",
+      "status": "implemented",
+      "evidence": [
+        "core/transfer.mjs",
+        "core/queue.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F116",
+      "category": "Integrity and recovery",
+      "name": "Drive MD5 comparison",
+      "status": "implemented",
+      "evidence": [
+        "core/transfer.mjs",
+        "core/queue.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F117",
+      "category": "Integrity and recovery",
+      "name": "Source length mismatch detection",
+      "status": "implemented",
+      "evidence": [
+        "core/transfer.mjs",
+        "core/queue.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F118",
+      "category": "Integrity and recovery",
+      "name": "Finalization response validation",
+      "status": "implemented",
+      "evidence": [
+        "core/transfer.mjs",
+        "core/queue.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F119",
+      "category": "Integrity and recovery",
+      "name": "Interrupted job recovery state",
+      "status": "implemented",
+      "evidence": [
+        "core/transfer.mjs",
+        "core/queue.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F120",
+      "category": "Integrity and recovery",
+      "name": "Partially acknowledged chunk detection",
+      "status": "implemented",
+      "evidence": [
+        "core/transfer.mjs",
+        "core/queue.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F121",
+      "category": "Integrity and recovery",
+      "name": "Invalid upload session rejection",
+      "status": "implemented",
+      "evidence": [
+        "core/transfer.mjs",
+        "core/queue.mjs",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F122",
+      "category": "Integrity and recovery",
+      "name": "Source ETag capture",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F123",
+      "category": "Integrity and recovery",
+      "name": "Source ETag change detection",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F124",
+      "category": "Integrity and recovery",
+      "name": "Range-based source resume",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F125",
+      "category": "Integrity and recovery",
+      "name": "Cross-restart upload resume",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F126",
+      "category": "Integrity and recovery",
+      "name": "Resume session expiry handling",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F127",
+      "category": "Integrity and recovery",
+      "name": "Source URL renewal for expired links",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F128",
+      "category": "Integrity and recovery",
+      "name": "Integrity report export",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F129",
+      "category": "Transfer history",
+      "name": "Persistent local transfer history",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "core/store.mjs",
+        "public/model.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F130",
+      "category": "Transfer history",
+      "name": "Newest-first history sorting",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "core/store.mjs",
+        "public/model.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F131",
+      "category": "Transfer history",
+      "name": "Oldest-first history sorting",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "core/store.mjs",
+        "public/model.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F132",
+      "category": "Transfer history",
+      "name": "Alphabetical history sorting",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "core/store.mjs",
+        "public/model.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F133",
+      "category": "Transfer history",
+      "name": "Size-based history sorting",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "core/store.mjs",
+        "public/model.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F134",
+      "category": "Transfer history",
+      "name": "Priority-based history sorting",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "core/store.mjs",
+        "public/model.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F135",
+      "category": "Transfer history",
+      "name": "Search transfer names",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "core/store.mjs",
+        "public/model.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F136",
+      "category": "Transfer history",
+      "name": "Search transfer source hosts",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "core/store.mjs",
+        "public/model.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F137",
+      "category": "Transfer history",
+      "name": "Search transfer notes",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "core/store.mjs",
+        "public/model.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F138",
+      "category": "Transfer history",
+      "name": "Search transfer tags",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "core/store.mjs",
+        "public/model.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F139",
+      "category": "Transfer history",
+      "name": "Filter transfer status",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "core/store.mjs",
+        "public/model.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F140",
+      "category": "Transfer history",
+      "name": "History pagination",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "core/store.mjs",
+        "public/model.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F141",
+      "category": "Transfer history",
+      "name": "Archive finished transfer",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "core/store.mjs",
+        "public/model.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F142",
+      "category": "Transfer history",
+      "name": "Unarchive finished transfer",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "core/store.mjs",
+        "public/model.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F143",
+      "category": "Transfer history",
+      "name": "Remove local history entry",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "core/store.mjs",
+        "public/model.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F144",
+      "category": "Transfer history",
+      "name": "Clear unpinned finished history",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "core/store.mjs",
+        "public/model.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F145",
+      "category": "Organization",
+      "name": "Add transfer tags",
+      "status": "implemented",
+      "evidence": [
+        "public/app.js",
+        "core/queue.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F146",
+      "category": "Organization",
+      "name": "Edit transfer tags",
+      "status": "implemented",
+      "evidence": [
+        "public/app.js",
+        "core/queue.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F147",
+      "category": "Organization",
+      "name": "Deduplicate transfer tags",
+      "status": "implemented",
+      "evidence": [
+        "public/app.js",
+        "core/queue.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F148",
+      "category": "Organization",
+      "name": "Pin transfer",
+      "status": "implemented",
+      "evidence": [
+        "public/app.js",
+        "core/queue.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F149",
+      "category": "Organization",
+      "name": "Unpin transfer",
+      "status": "implemented",
+      "evidence": [
+        "public/app.js",
+        "core/queue.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F150",
+      "category": "Organization",
+      "name": "Pinned-only view",
+      "status": "implemented",
+      "evidence": [
+        "public/app.js",
+        "core/queue.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F151",
+      "category": "Organization",
+      "name": "Include archived transfers view",
+      "status": "implemented",
+      "evidence": [
+        "public/app.js",
+        "core/queue.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F152",
+      "category": "Organization",
+      "name": "Select visible transfers",
+      "status": "implemented",
+      "evidence": [
+        "public/app.js",
+        "core/queue.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F153",
+      "category": "Organization",
+      "name": "Bulk archive transfers",
+      "status": "implemented",
+      "evidence": [
+        "public/app.js",
+        "core/queue.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F154",
+      "category": "Organization",
+      "name": "Bulk remove history entries",
+      "status": "implemented",
+      "evidence": [
+        "public/app.js",
+        "core/queue.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F155",
+      "category": "Organization",
+      "name": "Edit transfer notes",
+      "status": "implemented",
+      "evidence": [
+        "public/app.js",
+        "core/queue.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F156",
+      "category": "Organization",
+      "name": "Edit waiting transfer priority",
+      "status": "implemented",
+      "evidence": [
+        "public/app.js",
+        "core/queue.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F157",
+      "category": "Organization",
+      "name": "Transfer detail view",
+      "status": "implemented",
+      "evidence": [
+        "public/app.js",
+        "core/queue.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F158",
+      "category": "Organization",
+      "name": "Copy completed Drive link",
+      "status": "implemented",
+      "evidence": [
+        "public/app.js",
+        "core/queue.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F159",
+      "category": "Organization",
+      "name": "Open completed file in Drive",
+      "status": "implemented",
+      "evidence": [
+        "public/app.js",
+        "core/queue.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F160",
+      "category": "Organization",
+      "name": "Save filtered views",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F161",
+      "category": "Transfer templates",
+      "name": "Create transfer template",
+      "status": "implemented",
+      "evidence": [
+        "server.mjs",
+        "public/app.js"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F162",
+      "category": "Transfer templates",
+      "name": "List transfer templates",
+      "status": "implemented",
+      "evidence": [
+        "server.mjs",
+        "public/app.js"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F163",
+      "category": "Transfer templates",
+      "name": "Apply transfer template",
+      "status": "implemented",
+      "evidence": [
+        "server.mjs",
+        "public/app.js"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F164",
+      "category": "Transfer templates",
+      "name": "Delete transfer template",
+      "status": "implemented",
+      "evidence": [
+        "server.mjs",
+        "public/app.js"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F165",
+      "category": "Transfer templates",
+      "name": "Template name validation",
+      "status": "implemented",
+      "evidence": [
+        "server.mjs",
+        "public/app.js"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F166",
+      "category": "Transfer templates",
+      "name": "Template naming pattern",
+      "status": "implemented",
+      "evidence": [
+        "server.mjs",
+        "public/app.js"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F167",
+      "category": "Transfer templates",
+      "name": "Template default tags",
+      "status": "implemented",
+      "evidence": [
+        "server.mjs",
+        "public/app.js"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F168",
+      "category": "Transfer templates",
+      "name": "Template default priority",
+      "status": "implemented",
+      "evidence": [
+        "server.mjs",
+        "public/app.js"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F169",
+      "category": "Transfer templates",
+      "name": "Template destination field",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F170",
+      "category": "Transfer templates",
+      "name": "Template HTML preference field",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F171",
+      "category": "Transfer templates",
+      "name": "Template notes field",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F172",
+      "category": "Transfer templates",
+      "name": "Update existing template",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F173",
+      "category": "Transfer templates",
+      "name": "Duplicate template",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F174",
+      "category": "Transfer templates",
+      "name": "Export templates",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F175",
+      "category": "Transfer templates",
+      "name": "Import templates",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F176",
+      "category": "Transfer templates",
+      "name": "Template usage statistics",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F177",
+      "category": "Automation rules",
+      "name": "Create routing rule",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F178",
+      "category": "Automation rules",
+      "name": "Edit routing rule",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F179",
+      "category": "Automation rules",
+      "name": "Delete routing rule",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F180",
+      "category": "Automation rules",
+      "name": "Enable or disable routing rule",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F181",
+      "category": "Automation rules",
+      "name": "Match source hostname",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F182",
+      "category": "Automation rules",
+      "name": "Match file extension",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F183",
+      "category": "Automation rules",
+      "name": "Match file MIME type",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F184",
+      "category": "Automation rules",
+      "name": "Match file name substring",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F185",
+      "category": "Automation rules",
+      "name": "Match file size range",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F186",
+      "category": "Automation rules",
+      "name": "Route matched files to folder",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F187",
+      "category": "Automation rules",
+      "name": "Apply matched naming pattern",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F188",
+      "category": "Automation rules",
+      "name": "Apply matched tags",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F189",
+      "category": "Automation rules",
+      "name": "Apply matched priority",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F190",
+      "category": "Automation rules",
+      "name": "Rule precedence ordering",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F191",
+      "category": "Automation rules",
+      "name": "Preview rule results",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F192",
+      "category": "Automation rules",
+      "name": "Export and import routing rules",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F193",
+      "category": "Notifications and activity",
+      "name": "In-app completion notifications",
+      "status": "implemented",
+      "evidence": [
+        "public/app.js",
+        "core/queue.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F194",
+      "category": "Notifications and activity",
+      "name": "In-app failure notifications",
+      "status": "implemented",
+      "evidence": [
+        "public/app.js",
+        "core/queue.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F195",
+      "category": "Notifications and activity",
+      "name": "Dismiss status notification",
+      "status": "implemented",
+      "evidence": [
+        "public/app.js",
+        "core/queue.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F196",
+      "category": "Notifications and activity",
+      "name": "Persistent queue event journal",
+      "status": "implemented",
+      "evidence": [
+        "public/app.js",
+        "core/queue.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F197",
+      "category": "Notifications and activity",
+      "name": "Connection event journal",
+      "status": "implemented",
+      "evidence": [
+        "public/app.js",
+        "core/queue.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F198",
+      "category": "Notifications and activity",
+      "name": "Event timestamps",
+      "status": "implemented",
+      "evidence": [
+        "public/app.js",
+        "core/queue.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F199",
+      "category": "Notifications and activity",
+      "name": "Offline browser notification",
+      "status": "implemented",
+      "evidence": [
+        "public/app.js",
+        "core/queue.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F200",
+      "category": "Notifications and activity",
+      "name": "Online browser notification",
+      "status": "implemented",
+      "evidence": [
+        "public/app.js",
+        "core/queue.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F201",
+      "category": "Notifications and activity",
+      "name": "Desktop completion notifications",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F202",
+      "category": "Notifications and activity",
+      "name": "Desktop failure notifications",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F203",
+      "category": "Notifications and activity",
+      "name": "Notification permission control",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F204",
+      "category": "Notifications and activity",
+      "name": "Queue-drained notification",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F205",
+      "category": "Notifications and activity",
+      "name": "Daily transfer summary",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F206",
+      "category": "Notifications and activity",
+      "name": "Notification sound toggle",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F207",
+      "category": "Notifications and activity",
+      "name": "Activity event filtering",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F208",
+      "category": "Notifications and activity",
+      "name": "Activity JSON export",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F209",
+      "category": "Preferences",
+      "name": "Light appearance",
+      "status": "implemented",
+      "evidence": [
+        "core/store.mjs",
+        "public/app.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F210",
+      "category": "Preferences",
+      "name": "Dark appearance",
+      "status": "implemented",
+      "evidence": [
+        "core/store.mjs",
+        "public/app.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F211",
+      "category": "Preferences",
+      "name": "System appearance preference",
+      "status": "implemented",
+      "evidence": [
+        "core/store.mjs",
+        "public/app.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F212",
+      "category": "Preferences",
+      "name": "Compact row density",
+      "status": "implemented",
+      "evidence": [
+        "core/store.mjs",
+        "public/app.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F213",
+      "category": "Preferences",
+      "name": "Adjustable status refresh interval",
+      "status": "implemented",
+      "evidence": [
+        "core/store.mjs",
+        "public/app.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F214",
+      "category": "Preferences",
+      "name": "Default transfer priority",
+      "status": "implemented",
+      "evidence": [
+        "core/store.mjs",
+        "public/app.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F215",
+      "category": "Preferences",
+      "name": "Default transfer tags",
+      "status": "implemented",
+      "evidence": [
+        "core/store.mjs",
+        "public/app.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F216",
+      "category": "Preferences",
+      "name": "Default file-name pattern",
+      "status": "implemented",
+      "evidence": [
+        "core/store.mjs",
+        "public/app.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F217",
+      "category": "Preferences",
+      "name": "Default HTML permission",
+      "status": "implemented",
+      "evidence": [
+        "core/store.mjs",
+        "public/app.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F218",
+      "category": "Preferences",
+      "name": "Default duplicate policy",
+      "status": "implemented",
+      "evidence": [
+        "core/store.mjs",
+        "public/app.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F219",
+      "category": "Preferences",
+      "name": "Configurable history retention count",
+      "status": "implemented",
+      "evidence": [
+        "core/store.mjs",
+        "public/app.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F220",
+      "category": "Preferences",
+      "name": "Confirmation before cancel",
+      "status": "implemented",
+      "evidence": [
+        "core/store.mjs",
+        "public/app.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F221",
+      "category": "Preferences",
+      "name": "Reset preferences",
+      "status": "implemented",
+      "evidence": [
+        "core/store.mjs",
+        "public/app.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F222",
+      "category": "Preferences",
+      "name": "Persistent preferences",
+      "status": "implemented",
+      "evidence": [
+        "core/store.mjs",
+        "public/app.js",
+        "test/core.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F223",
+      "category": "Preferences",
+      "name": "Default destination selection",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F224",
+      "category": "Preferences",
+      "name": "Export and import preferences",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F225",
+      "category": "Privacy and security",
+      "name": "Loopback-only server binding",
+      "status": "implemented",
+      "evidence": [
+        "lib.mjs",
+        "server.mjs",
+        "core/export.mjs",
+        "test/app.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F226",
+      "category": "Privacy and security",
+      "name": "Host header validation",
+      "status": "implemented",
+      "evidence": [
+        "lib.mjs",
+        "server.mjs",
+        "core/export.mjs",
+        "test/app.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F227",
+      "category": "Privacy and security",
+      "name": "Origin validation for mutations",
+      "status": "implemented",
+      "evidence": [
+        "lib.mjs",
+        "server.mjs",
+        "core/export.mjs",
+        "test/app.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F228",
+      "category": "Privacy and security",
+      "name": "Session anti-forgery token",
+      "status": "implemented",
+      "evidence": [
+        "lib.mjs",
+        "server.mjs",
+        "core/export.mjs",
+        "test/app.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F229",
+      "category": "Privacy and security",
+      "name": "Content Security Policy",
+      "status": "implemented",
+      "evidence": [
+        "lib.mjs",
+        "server.mjs",
+        "core/export.mjs",
+        "test/app.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F230",
+      "category": "Privacy and security",
+      "name": "Private-network URL blocking",
+      "status": "implemented",
+      "evidence": [
+        "lib.mjs",
+        "server.mjs",
+        "core/export.mjs",
+        "test/app.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F231",
+      "category": "Privacy and security",
+      "name": "DNS pinning for source requests",
+      "status": "implemented",
+      "evidence": [
+        "lib.mjs",
+        "server.mjs",
+        "core/export.mjs",
+        "test/app.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F232",
+      "category": "Privacy and security",
+      "name": "Redirect destination validation",
+      "status": "implemented",
+      "evidence": [
+        "lib.mjs",
+        "server.mjs",
+        "core/export.mjs",
+        "test/app.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F233",
+      "category": "Privacy and security",
+      "name": "Memory-only Google tokens",
+      "status": "implemented",
+      "evidence": [
+        "lib.mjs",
+        "server.mjs",
+        "core/export.mjs",
+        "test/app.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F234",
+      "category": "Privacy and security",
+      "name": "Opt-in source URL persistence",
+      "status": "implemented",
+      "evidence": [
+        "lib.mjs",
+        "server.mjs",
+        "core/export.mjs",
+        "test/app.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F235",
+      "category": "Privacy and security",
+      "name": "Redacted source URLs in history API",
+      "status": "implemented",
+      "evidence": [
+        "lib.mjs",
+        "server.mjs",
+        "core/export.mjs",
+        "test/app.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F236",
+      "category": "Privacy and security",
+      "name": "CSV formula injection protection",
+      "status": "implemented",
+      "evidence": [
+        "lib.mjs",
+        "server.mjs",
+        "core/export.mjs",
+        "test/app.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F237",
+      "category": "Privacy and security",
+      "name": "Request-body size limit",
+      "status": "implemented",
+      "evidence": [
+        "lib.mjs",
+        "server.mjs",
+        "core/export.mjs",
+        "test/app.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F238",
+      "category": "Privacy and security",
+      "name": "Referrer suppression",
+      "status": "implemented",
+      "evidence": [
+        "lib.mjs",
+        "server.mjs",
+        "core/export.mjs",
+        "test/app.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F239",
+      "category": "Privacy and security",
+      "name": "Google secrets excluded from Git",
+      "status": "implemented",
+      "evidence": [
+        "lib.mjs",
+        "server.mjs",
+        "core/export.mjs",
+        "test/app.test.mjs"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F240",
+      "category": "Privacy and security",
+      "name": "Encrypted source URL storage",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F241",
+      "category": "Accessibility and usability",
+      "name": "Keyboard main navigation",
+      "status": "implemented",
+      "evidence": [
+        "public/index.html",
+        "public/app.js",
+        "public/style.css"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F242",
+      "category": "Accessibility and usability",
+      "name": "Keyboard new-transfer shortcut",
+      "status": "implemented",
+      "evidence": [
+        "public/index.html",
+        "public/app.js",
+        "public/style.css"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F243",
+      "category": "Accessibility and usability",
+      "name": "Keyboard search shortcut",
+      "status": "implemented",
+      "evidence": [
+        "public/index.html",
+        "public/app.js",
+        "public/style.css"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F244",
+      "category": "Accessibility and usability",
+      "name": "Skip-to-content link",
+      "status": "implemented",
+      "evidence": [
+        "public/index.html",
+        "public/app.js",
+        "public/style.css"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F245",
+      "category": "Accessibility and usability",
+      "name": "Labelled form inputs",
+      "status": "implemented",
+      "evidence": [
+        "public/index.html",
+        "public/app.js",
+        "public/style.css"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F246",
+      "category": "Accessibility and usability",
+      "name": "Accessible upload progress",
+      "status": "implemented",
+      "evidence": [
+        "public/index.html",
+        "public/app.js",
+        "public/style.css"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F247",
+      "category": "Accessibility and usability",
+      "name": "Live notification region",
+      "status": "implemented",
+      "evidence": [
+        "public/index.html",
+        "public/app.js",
+        "public/style.css"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F248",
+      "category": "Accessibility and usability",
+      "name": "Dialog Escape dismissal",
+      "status": "implemented",
+      "evidence": [
+        "public/index.html",
+        "public/app.js",
+        "public/style.css"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F249",
+      "category": "Accessibility and usability",
+      "name": "Responsive mobile layout",
+      "status": "implemented",
+      "evidence": [
+        "public/index.html",
+        "public/app.js",
+        "public/style.css"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F250",
+      "category": "Accessibility and usability",
+      "name": "Reduced-motion preference",
+      "status": "implemented",
+      "evidence": [
+        "public/index.html",
+        "public/app.js",
+        "public/style.css"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F251",
+      "category": "Accessibility and usability",
+      "name": "Empty-state guidance",
+      "status": "implemented",
+      "evidence": [
+        "public/index.html",
+        "public/app.js",
+        "public/style.css"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F252",
+      "category": "Accessibility and usability",
+      "name": "Inline transfer validation errors",
+      "status": "implemented",
+      "evidence": [
+        "public/index.html",
+        "public/app.js",
+        "public/style.css"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F253",
+      "category": "Accessibility and usability",
+      "name": "Disabled unavailable Drive actions",
+      "status": "implemented",
+      "evidence": [
+        "public/index.html",
+        "public/app.js",
+        "public/style.css"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F254",
+      "category": "Accessibility and usability",
+      "name": "Accessible selection checkboxes",
+      "status": "implemented",
+      "evidence": [
+        "public/index.html",
+        "public/app.js",
+        "public/style.css"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F255",
+      "category": "Accessibility and usability",
+      "name": "Keyboard shortcut help",
+      "status": "implemented",
+      "evidence": [
+        "public/index.html",
+        "public/app.js",
+        "public/style.css"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F256",
+      "category": "Accessibility and usability",
+      "name": "User-controlled font scale",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F257",
+      "category": "Insights and reporting",
+      "name": "Total transferred bytes",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "core/export.mjs",
+        "public/app.js"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F258",
+      "category": "Insights and reporting",
+      "name": "Active transfer count",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "core/export.mjs",
+        "public/app.js"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F259",
+      "category": "Insights and reporting",
+      "name": "Completed transfer count",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "core/export.mjs",
+        "public/app.js"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F260",
+      "category": "Insights and reporting",
+      "name": "Queued transfer count",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "core/export.mjs",
+        "public/app.js"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F261",
+      "category": "Insights and reporting",
+      "name": "Combined transfer speed",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "core/export.mjs",
+        "public/app.js"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F262",
+      "category": "Insights and reporting",
+      "name": "Recent transfer overview",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "core/export.mjs",
+        "public/app.js"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F263",
+      "category": "Insights and reporting",
+      "name": "Transfer duration record",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "core/export.mjs",
+        "public/app.js"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F264",
+      "category": "Insights and reporting",
+      "name": "Transfer attempt count",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "core/export.mjs",
+        "public/app.js"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F265",
+      "category": "Insights and reporting",
+      "name": "CSV history export",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "core/export.mjs",
+        "public/app.js"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F266",
+      "category": "Insights and reporting",
+      "name": "JSON history export",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "core/export.mjs",
+        "public/app.js"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F267",
+      "category": "Insights and reporting",
+      "name": "Workspace backup export",
+      "status": "implemented",
+      "evidence": [
+        "core/queue.mjs",
+        "core/export.mjs",
+        "public/app.js"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F268",
+      "category": "Insights and reporting",
+      "name": "Success-rate chart",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F269",
+      "category": "Insights and reporting",
+      "name": "Transfer volume by day",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F270",
+      "category": "Insights and reporting",
+      "name": "Bytes by source host",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F271",
+      "category": "Insights and reporting",
+      "name": "File-type breakdown",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F272",
+      "category": "Insights and reporting",
+      "name": "Time-range report filters",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F273",
+      "category": "Portability and operations",
+      "name": "Windows launch script",
+      "status": "implemented",
+      "evidence": [
+        "server.mjs",
+        "core/store.mjs",
+        "start.cmd"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F274",
+      "category": "Portability and operations",
+      "name": "macOS launch script",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F275",
+      "category": "Portability and operations",
+      "name": "Linux launch script",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F276",
+      "category": "Portability and operations",
+      "name": "Dependency-free Node runtime",
+      "status": "implemented",
+      "evidence": [
+        "server.mjs",
+        "core/store.mjs",
+        "start.cmd"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F277",
+      "category": "Portability and operations",
+      "name": "Configurable server port",
+      "status": "implemented",
+      "evidence": [
+        "server.mjs",
+        "core/store.mjs",
+        "start.cmd"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F278",
+      "category": "Portability and operations",
+      "name": "Configurable local data directory",
+      "status": "implemented",
+      "evidence": [
+        "server.mjs",
+        "core/store.mjs",
+        "start.cmd"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F279",
+      "category": "Portability and operations",
+      "name": "Atomic workspace writes",
+      "status": "implemented",
+      "evidence": [
+        "server.mjs",
+        "core/store.mjs",
+        "start.cmd"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F280",
+      "category": "Portability and operations",
+      "name": "Corrupt-state preservation",
+      "status": "implemented",
+      "evidence": [
+        "server.mjs",
+        "core/store.mjs",
+        "start.cmd"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F281",
+      "category": "Portability and operations",
+      "name": "Health endpoint",
+      "status": "implemented",
+      "evidence": [
+        "server.mjs",
+        "core/store.mjs",
+        "start.cmd"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F282",
+      "category": "Portability and operations",
+      "name": "Graceful shutdown",
+      "status": "implemented",
+      "evidence": [
+        "server.mjs",
+        "core/store.mjs",
+        "start.cmd"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F283",
+      "category": "Portability and operations",
+      "name": "Portable release archive",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F284",
+      "category": "Portability and operations",
+      "name": "Windows packaged executable",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F285",
+      "category": "Portability and operations",
+      "name": "Docker deployment",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F286",
+      "category": "Portability and operations",
+      "name": "Workspace backup restore",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F287",
+      "category": "Portability and operations",
+      "name": "Local workspace migration",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F288",
+      "category": "Portability and operations",
+      "name": "Versioned data migrations",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F289",
+      "category": "Project quality",
+      "name": "Automated queue lifecycle tests",
+      "status": "implemented",
+      "evidence": [
+        "test/app.test.mjs",
+        "test/core.test.mjs",
+        "docs/features.json"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F290",
+      "category": "Project quality",
+      "name": "Automated upload protocol tests",
+      "status": "implemented",
+      "evidence": [
+        "test/app.test.mjs",
+        "test/core.test.mjs",
+        "docs/features.json"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F291",
+      "category": "Project quality",
+      "name": "Automated local API tests",
+      "status": "implemented",
+      "evidence": [
+        "test/app.test.mjs",
+        "test/core.test.mjs",
+        "docs/features.json"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F292",
+      "category": "Project quality",
+      "name": "Automated source security tests",
+      "status": "implemented",
+      "evidence": [
+        "test/app.test.mjs",
+        "test/core.test.mjs",
+        "docs/features.json"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F293",
+      "category": "Project quality",
+      "name": "Automated import export tests",
+      "status": "implemented",
+      "evidence": [
+        "test/app.test.mjs",
+        "test/core.test.mjs",
+        "docs/features.json"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F294",
+      "category": "Project quality",
+      "name": "Automated preference validation tests",
+      "status": "implemented",
+      "evidence": [
+        "test/app.test.mjs",
+        "test/core.test.mjs",
+        "docs/features.json"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F295",
+      "category": "Project quality",
+      "name": "Continuous integration on Linux",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F296",
+      "category": "Project quality",
+      "name": "Continuous integration on Windows",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F297",
+      "category": "Project quality",
+      "name": "Continuous integration on macOS",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F298",
+      "category": "Project quality",
+      "name": "Dependency vulnerability scanning",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F299",
+      "category": "Project quality",
+      "name": "Release packaging workflow",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F300",
+      "category": "Project quality",
+      "name": "Contribution guide",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F301",
+      "category": "Project quality",
+      "name": "Security reporting guide",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F302",
+      "category": "Project quality",
+      "name": "Troubleshooting guide",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F303",
+      "category": "Project quality",
+      "name": "Feature evidence inventory",
+      "status": "implemented",
+      "evidence": [
+        "test/app.test.mjs",
+        "test/core.test.mjs",
+        "docs/features.json"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F304",
+      "category": "Project quality",
+      "name": "Preserved repository license",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F305",
+      "category": "Source intelligence",
+      "name": "Direct URL validation",
+      "status": "implemented",
+      "evidence": [
+        "lib.mjs",
+        "core/transfer.mjs",
+        "public/app.js"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F306",
+      "category": "Source intelligence",
+      "name": "Embedded URL credential rejection",
+      "status": "implemented",
+      "evidence": [
+        "lib.mjs",
+        "core/transfer.mjs",
+        "public/app.js"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F307",
+      "category": "Source intelligence",
+      "name": "HTML download detection",
+      "status": "implemented",
+      "evidence": [
+        "lib.mjs",
+        "core/transfer.mjs",
+        "public/app.js"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F308",
+      "category": "Source intelligence",
+      "name": "Explicit HTML download override",
+      "status": "implemented",
+      "evidence": [
+        "lib.mjs",
+        "core/transfer.mjs",
+        "public/app.js"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F309",
+      "category": "Source intelligence",
+      "name": "Source domain display",
+      "status": "implemented",
+      "evidence": [
+        "lib.mjs",
+        "core/transfer.mjs",
+        "public/app.js"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F310",
+      "category": "Source intelligence",
+      "name": "Source file extension display",
+      "status": "implemented",
+      "evidence": [
+        "lib.mjs",
+        "core/transfer.mjs",
+        "public/app.js"
+      ],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F311",
+      "category": "Source intelligence",
+      "name": "Preflight source metadata inspection",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F312",
+      "category": "Source intelligence",
+      "name": "Source content-length preview",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F313",
+      "category": "Source intelligence",
+      "name": "Source MIME preview",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F314",
+      "category": "Source intelligence",
+      "name": "Source redirect-chain preview",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F315",
+      "category": "Source intelligence",
+      "name": "Source filename preview",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F316",
+      "category": "Source intelligence",
+      "name": "HTTP to HTTPS suggestion",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F317",
+      "category": "Source intelligence",
+      "name": "Expired-link error guidance",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F318",
+      "category": "Source intelligence",
+      "name": "Source host allowlist",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F319",
+      "category": "Source intelligence",
+      "name": "Source host blocklist",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    },
+    {
+      "id": "F320",
+      "category": "Source intelligence",
+      "name": "Per-host concurrency limits",
+      "status": "planned",
+      "evidence": [],
+      "verification": "Not yet individually acceptance-tested"
+    }
+  ]
+}
